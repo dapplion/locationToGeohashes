@@ -26,9 +26,8 @@ const maxNumberOfGeohashes = 15
  * @param {Integer} resolution = 1-7
  * @param {Number} threshold = 0 =< threshold =< 1. The code computes which fraction of a geohash cell
  * is covered by the target area. If this fraction is less than the threshold, they will be ignored
- * Default value = 0.15
  */
-function computeGeohashes(point, resolution, threshold = 0.15) {
+function computeGeohashes(point, resolution, threshold) {
     if (!point || typeof point !== 'object' || !('lat' in point) || !('lon' in point)) {
         throw Error(`The first argument must be an object with properties { lat: <Num>,  lon: <Num> }`)
     }
