@@ -11,6 +11,27 @@ const geohashes = locationToGeohashes(point, resolution);
 // geohashes = ["u1517", "u1515", "u1514", "u1516"]
 ```
 
+## Resolution parameter
+
+Associated square side to a specific resolution. The square side is picked to minimize the number of geohashes necessary to represent the target area and to be small enough to represent it appropiately.
+
+```
+  1: 5000*1000,  // 5,009.4km x 4,992.6km
+  2: 1252*1000,  // 1,252.3km x 624.1km
+  3: 156*1000,   // 156.5km x 156km
+  4: 40*1000,    // 39.1km x 19.5km
+  5: 5*1000,     // 4.9km x 4.9km
+  6: 1200,       // 1.2km x 609.4m
+  7: 150,        // 152.9m x 152.4m
+```
+
+## How does this look like?
+
+In this example you can see the outcome of requesting a resolution 5 around an arbitrary point in the center of Antwerp.
+The target area for resolution 5 is a 4.9 x 4.9km square, which is best represented by geohashes: [ 'u155m', 'u155k' ].
+
+![geohash-demo](/doc/geohash-demo.png)
+
 ## Search algorythm
 
 Per item, check if any geohash of the item starts with any geohash of the user
